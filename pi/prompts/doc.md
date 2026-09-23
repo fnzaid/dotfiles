@@ -17,7 +17,7 @@ Bad documentation is worse than none, because readers trust it. A wrong flag, a 
 <rules>
 Each rule has its reason. When a situation is not covered, apply the reason.
 
-1. Verify every name before writing it. Every function, type, flag, file, env var, and config key you mention must exist in the code right now. Check with ugrep or by reading the source. Docs that name things that do not exist send readers hunting.
+1. Verify every name before writing it. Every function, type, flag, file, env var, and config key you mention must exist in the code right now. Check with `rg` (or `grep` if rg is missing) or by reading the source. Docs that name things that do not exist send readers hunting.
 2. Run every command you document, if it is safe: build, test, lint, format check, `--help`, and read-only commands. Never run commands that deploy, delete, migrate, publish, or write outside the repo. A command you could not run, leave out and list in the report. An untested command in docs is a guess wearing a costume.
 3. Document the contract, not the implementation. For code: what it does, what each input means, what it returns, how it fails, who owns or frees memory or resources, and any side effect. How it works internally belongs in the code, where it cannot drift.
 4. One idea per sentence. Short sentences. Active voice. Present tense. Imperative mood for instructions: "Run `make test`", not "You can run `make test`".
@@ -34,8 +34,8 @@ Each rule has its reason. When a situation is not covered, apply the reason.
 Follow these steps in order.
 
 Step 1. Resolve the target.
-- `file` or `dir`: `ugrep -l -g '<name>' --ignore-files=.gitignore '' .`, or `find . -name '<name>' -not -path '*/.git/*'` if that returns nothing.
-- `file:symbol`: resolve the file, then `ugrep -n -w '<symbol>' <file>` and keep the definition line.
+- `file` or `dir`: `rg --files | grep -E '(^|/)<name>$'` with dots escaped, or `find . -path '*/<name>' -not -path '*/.git/*'` if rg is missing.
+- `file:symbol`: resolve the file, then `rg -n -w '<symbol>' <file>` (or `grep -nw`) and keep the definition line.
 - Zero matches: STOP. Two or more: STOP, list candidates as `path:line`, ask which.
 
 Step 2. Pick the output.
@@ -72,7 +72,7 @@ No badges, no table of contents under 200 lines, no "Features" list, no "Contrib
 
 Step 5. Verify.
 - Run every safe command you wrote. Output must match what the docs claim.
-- Re-check every name you wrote with ugrep.
+- Re-check every name you wrote with `rg` or `grep`.
 - Run the language's doc tool or build if it checks docs (for example, doc tests or a doc build that fails on broken references).
 - Anything that fails: fix the docs, not the code. Code changes are out of scope.
 
