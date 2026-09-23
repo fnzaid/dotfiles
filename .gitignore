@@ -4,9 +4,11 @@ nvim/.repro/
 **/backups/
 **/swp/
 
-claude/ 
+claude/
 claude.lock/
 opencode/
+pi/*
+!pi/prompts/
 
 kitty/
 ghostty/
