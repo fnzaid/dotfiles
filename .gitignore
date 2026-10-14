@@ -7,8 +7,23 @@ nvim/.repro/
 claude/
 claude.lock/
 opencode/
-pi/*
-!pi/prompts/
-
 kitty/
 ghostty/
+
+# Pi: ignore everything, then name what is config
+pi/*
+!pi/settings.json
+!pi/keybindings.json
+!pi/models.json
+!pi/AGENTS.md
+!pi/SYSTEM.md
+!pi/APPEND_SYSTEM.md
+!pi/drill.json
+!pi/prompts/
+!pi/extensions/
+!pi/skills/
+!pi/themes/
+!pi/pi-drill/
+pi/pi-drill/node_modules/
+pi/pi-drill/coverage/
+pi/pi-drill/bench/results/
