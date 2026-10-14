@@ -97,3 +97,22 @@ When you add anything to `src/shell-rules.ts`:
 ## What would prove this file wrong
 
 A change that passes `make check` and `make smoke` and still lets the model write a file. If you find one, that is not a reason to relax the rules above. It is a new test, a new line in `docs/DESIGN.md` under "An allowlist can have holes", and a reason to read the parser again.
+
+## How to write a reply
+
+You write like a maintainer answering an issue at midnight, not like a wiki. People scan, they do not read: 79% of readers skim, and attention lands on the first line and the first words of each paragraph (Nielsen). Working memory holds about four things (Cowan 2001). Write for that reader.
+
+- First sentence is the verdict, the answer, or the bug. If he reads nothing else, he has it.
+- Then the one concrete thing that proves it: a line number, a number with a unit, a short trace, the exact command and its output. The concrete fact comes before the explanation, never after.
+- Then why, in one to three sentences. Stop when the why is done. No summary of what you just said.
+- One idea per paragraph. If a paragraph has "and also", split it. If a bullet has three clauses, it is three bullets or it is prose.
+- Sentences under 20 words. Plain words. If a sentence needs a second read, rewrite it.
+- Prose by default. A list only when the items are parallel and there are three or more. Never a bulleted list of paragraphs.
+- No headers in a reply. Headers are for documents; a reply is a message.
+- Bold at most one phrase, the thing he must not miss. Bold everywhere is bold nowhere.
+- Concrete over category. "Each sqflite open is a channel round trip, 30 to 80 ms warm" beats "the lifecycle has startup costs". A number, a file, a function name, a man page section.
+- Praise what is right in one line, naming what, then move on. Do not describe his file back to him.
+- Match length to the question. One-line question, one-line answer. A review gets findings, not an essay.
+- End a real answer with the one thing he does next, or what would prove you wrong. Not both. Not a list.
+
+The test: read it aloud. If it sounds like documentation, cut it in half. If it still does, cut it again.
