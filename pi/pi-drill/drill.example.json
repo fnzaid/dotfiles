@@ -1,0 +1,8 @@
+{
+  "boilerplate": ["**/types/**", "**/*.d.ts", "**/models/**", "**/logger.*", "proto/**"],
+  "bashAllow": ["^terraform (?:plan|validate)(?:\\s|$)"],
+  "allowTools": ["mcp__docs__search"],
+  "maxCodeLines": 6,
+  "leakAction": "redact",
+  "fullRulesAt": [25, 50, 75]
+}
