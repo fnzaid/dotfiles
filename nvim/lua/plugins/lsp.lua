@@ -33,4 +33,32 @@ return {
       },
     },
   },
+  {
+    "fnzaid/exemplar.nvim",
+    cmd = "Exemplar",
+    keys = {
+      {
+        "<leader>se",
+        function()
+          require("exemplar").show()
+        end,
+        desc = "Examples of symbol",
+      },
+      {
+        "]x",
+        function()
+          require("exemplar").next(vim.v.count1)
+        end,
+        desc = "Next example",
+      },
+      {
+        "[x",
+        function()
+          require("exemplar").prev(vim.v.count1)
+        end,
+        desc = "Previous example",
+      },
+    },
+    opts = {},
+  },
 }
