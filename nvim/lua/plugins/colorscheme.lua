@@ -1,6 +1,6 @@
 return {
   {
-    "HttoZaid/mesopic.nvim",
+    "fnzaid/mesopic.nvim",
     lazy = false,
     priority = 1000,
     config = function()
