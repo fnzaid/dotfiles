@@ -6,6 +6,8 @@ return {
         ["("] = false,
         ['"'] = false,
         ["'"] = false,
+        ["{"] = false,
+        ["["] = false,
       },
     },
   },
