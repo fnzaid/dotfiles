@@ -64,5 +64,16 @@ return {
   {
     "mg979/vim-visual-multi",
     branch = "master",
+    init = function()
+      -- Disable or change the default VM maps that steal <C-f>
+      vim.g.VM_maps = {
+        -- Remap VM's Find Prev away from <C-f> so blink.cmp keeps <C-f>
+        ["Find Prev"] = "<C-p>",
+        -- Unbind page forward if VM set it
+        ["Page Down"] = "",
+      }
+      -- Prevent VM from overriding insert mode keys
+      vim.g.VM_mouse_mappings = 0
+    end,
   },
 }

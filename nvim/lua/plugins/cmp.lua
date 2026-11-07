@@ -5,7 +5,7 @@ return {
       preset = "default",
       ["<Tab>"] = { "select_next", "fallback" },
       ["<S-Tab>"] = { "select_prev", "fallback" },
-            ["<C-Space>"] = { "show" },
+      ["<C-Space>"] = { "show" },
       ["<C-f>"] = { "select_and_accept" },
     },
   },
